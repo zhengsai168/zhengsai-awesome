@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d78dda8-ff01-454d-a7be-98c551ed008b" name="默认的" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/paper-note/Urban-Computing/README.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,7 +14,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/paper-note/Urban-Computing/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
@@ -22,6 +23,16 @@
                 <folding />
               </first_editor>
               <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="6" lean-forward="true" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -36,6 +47,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/paper-note/Urban-Computing/README.md" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -90,17 +102,6 @@
             <path>
               <item name="zhengsai-awesome" type="b2602c69:ProjectViewProjectNode" />
               <item name="zhengsai-awesome" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zhengsai-awesome" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zhengsai-awesome" type="462c0819:PsiDirectoryNode" />
-              <item name="paper-note" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zhengsai-awesome" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zhengsai-awesome" type="462c0819:PsiDirectoryNode" />
-              <item name="paper-note" type="462c0819:PsiDirectoryNode" />
-              <item name="Urban-Computing" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -191,6 +192,14 @@
             <folding />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="6" lean-forward="true" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
