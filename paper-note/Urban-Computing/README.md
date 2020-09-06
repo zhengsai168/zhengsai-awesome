@@ -10,9 +10,22 @@
 ### 方法分类
 1. **STAGE-BASED** 
 
+在数据挖掘任务的不同阶段，采用不同的数据集。
+
+**例子1（路网数据和出租车轨迹数据）：**
+
+stage1：通过主干路网将城市划成不同区域
+
+! [1](pic/1.png)
+
+stage2：通过出租车轨迹数据，画出一个graph，点代表stage1中构造的区域，
+边代表出租车的移动。
+
+! [2](pic/2.png)
+
 2. **FEATURE-LEVEL-BASED**
+
+
 
 3. **SEMANTIC MEANING-BASED**
 
-
-![test_pic](pic/test.png)
