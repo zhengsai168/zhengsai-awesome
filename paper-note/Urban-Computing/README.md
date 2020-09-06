@@ -16,12 +16,12 @@
 
 stage1：通过主干路网将城市划成不同区域
 
-! [1](pic/1.png)
+![1](pic/1.png)
 
 stage2：通过出租车轨迹数据，画出一个graph，点代表stage1中构造的区域，
 边代表出租车的移动。
 
-! [2](pic/2.png)
+![2](pic/2.png)
 
 最终通过这个graph可以用来分析很多东西（比如哪两个区域的路规划的不好）
 
@@ -35,7 +35,7 @@ stage2：通过驻留点的POI数据，将驻留点描述成一个向量，将�
 stage3：由于不同用户的轨迹最终变成了驻留点向量，在不同的树形结构的不同layer
 有不同的图结构。可以通过这个比较用户间的相似度
 
-! [3](pic/3.png)
+![3](pic/3.png)
 
 **例子3（车辆轨迹数据和路网数据）**
 
@@ -56,7 +56,7 @@ stage3：由于不同用户的轨迹最终变成了驻留点向量，在不同�
 
 要融合视频和音频数据的特征，文本和图像的特征，可以采用AutoEndcoder的方式
 
-! [4](pic/4.png)
+![4](pic/4.png)
 
 - 蓝色表示最终融合出来的特征
 
@@ -91,7 +91,7 @@ view的分类器f1，f2，用f1和f2去给U'打标签，各自选出概率最高
 
 （用粗粒度空气质量，气象数据，交通流量数据，POI数据，路网这五个数据集）
 
-! [5](pic/5.png)
+![5](pic/5.png)
 
 蓝色斜线的点为新增加的细粒度空气质量（通过model推断出来的）。
 
@@ -109,7 +109,7 @@ A kernel is a hypothesis on the data, which could be a similarity notion, or a c
 
 A learning method picks the best kernel, or uses a combination of these kernels.
 
-! [6](pic/6.png)
+![6](pic/6.png)
 
 **现有MKL分类**
 
@@ -123,11 +123,11 @@ A learning method picks the best kernel, or uses a combination of these kernels.
 
 时间kernel和空间kernel，Prediction Aggregator是一个kernel learning method。
 
-! [7](pic/7.png)
+![7](pic/7.png)
 
 3. 基于子空间的（subspace learning）
 
-! [8](pic/8.png)
+![8](pic/8.png)
 
 PCA（主成分分析）和CCA（典型相关性分析）
 
