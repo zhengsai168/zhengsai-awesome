@@ -37,11 +37,106 @@ stage3：由于不同用户的轨迹最终变成了驻留点向量，在不同�
 
 ! [3](pic/3.png)
 
-**例子3（）**
+**例子3（车辆轨迹数据和路网数据）**
+
+用车辆轨迹数据和路网数据检测城市交通异常，例子1的一个具体例子。
+
+交通异常的定义：当一些事情（如火灾，游行，阅兵）发生时，周围的交通状况会表现出与平时不一样的行为模式
+
 
 2. **FEATURE-LEVEL-BASED**
 
+2.1 直接连接
 
+即将两个从数据集中提取出的特征向量直接拼接在一起。
+
+缺点：容易过拟合，忽略了特征之间的非线性关系和相关性。
+
+2.2 基于DNN的特征融合
+
+要融合视频和音频数据的特征，文本和图像的特征，可以采用AutoEndcoder的方式
+
+! [4](pic/4.png)
+
+- 蓝色表示最终融合出来的特征
+
+A：用视频重建音频和视频
+
+B：用视频和音频一起重建视频和音频
+
+C：双向的，一个是用文本重建图像，一个是用图像重建文本
 
 3. **SEMANTIC MEANING-BASED**
 
+3.1 **基于多视图（Multi-View Based）**
+
+**多视图的定义**
+
+一个对象的不同描述形式，例如描述一个人可以用人脸，手印，签名。
+描述一张图像，可以用很多像素，也可以用文字。
+
+结合一个对象的多视图可以更好地描述一个对象。
+
+**多视图方法的分类**
+
+1. 基于协同训练的（co-training）
+
+一个典型的协同训练过程：
+
+有标签数据集L，无标签数据集U，先采样出一个无标签的子集U'，然后用L训练基于两个
+view的分类器f1，f2，用f1和f2去给U'打标签，各自选出概率最高p个正样本和n个负样本，
+把这2p+2n和样本和标签送入L，然后把U'重新填满到原先的大小（即再从U中采样2p+2n个无标签样本）。
+
+一个协同训练预测细粒度空气质量的例子
+
+（用粗粒度空气质量，气象数据，交通流量数据，POI数据，路网这五个数据集）
+
+! [5](pic/5.png)
+
+蓝色斜线的点为新增加的细粒度空气质量（通过model推断出来的）。
+
+先是通过空间特征推断，然后用空间和时间特征一起推断后面的点。
+
+label data：粗粒度空气质量
+
+unlabel data：细粒度的空气质量
+
+2. 基于多核学习的（Multi-Kernel Learning）
+
+**MKL定义**
+
+A kernel is a hypothesis on the data, which could be a similarity notion, or a classifier, or a regressor.
+
+A learning method picks the best kernel, or uses a combination of these kernels.
+
+! [6](pic/6.png)
+
+**现有MKL分类**
+
+1.weight和base learners一起训练，
+
+2.在一轮迭代中，固定一个，训练另一个，然后反之。
+
+随机森林等集成学习方法就是一种MKL。
+
+**一个空气质量预测的例子**
+
+时间kernel和空间kernel，Prediction Aggregator是一个kernel learning method。
+
+! [7](pic/7.png)
+
+3. 基于子空间的（subspace learning）
+
+! [8](pic/8.png)
+
+PCA（主成分分析）和CCA（典型相关性分析）
+
+3.2 **基于相似性（Similarity-Based）**
+
+1. 耦合矩阵分解（Coupled Matrix Factorization）
+
+2. 流形对齐（Manifold Alignment）
+
+3.3 **基于概率依存关系（Probabilistic Dependency-Based）**
+
+3.4 **基于迁移学习（Transfer Learning-Based）**
