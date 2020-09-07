@@ -148,7 +148,10 @@ Z是一个活动之间的相关性矩阵。
 
 最终的目标函数如下所示，前半部分即分解矩阵要尽可能和原矩阵接近，后半部分为正则项。
 
-$$L(U, V, W)=\frac{1}{2}\left\|I \circ\left(X-U V^{T}\right)\right\|_{F}^{2}+\frac{\lambda_{1}}{2}\left\|Y-U W^{T}\right\|_{F}^{2}+\frac{\lambda_{2}}{2}\left\|Z-V V^{T}\right\|_{F}^{2}+\frac{\lambda_{3}}{2}\left(\|U\|_{F}^{2}+\|V\|_{F}^{2}+\|W\|_{F}^{2}\right)$$
+$$L(U, V, W)=\frac{1}{2}\left\|I \circ\left(X-U V^{T}\right)\right\|_{F}^{2}+\frac{\lambda_{1}} \\
+{2}\left\|Y-U W^{T}\right\|_{F}^{2}+\frac{\lambda_{2}}{2}\left\|Z-V V^{T}\right\|_{F}^{2}+ \\
+\frac{\lambda_{3}}{2}\left(\|U\|_{F}^{2}+\|V\|_{F}^{2}+\|W\|_{F}^{2}\right)
+$$
 
 **例子11（估计路段的车速值）**
 
@@ -162,7 +165,9 @@ $M_G$代表时间t，网格g的车流量，有平均值和实际值。
 
 目标函数为
 
-![text](https://latex.codecogs.com/gif.latex?L(U,&space;V,&space;W)=\frac{1}{2}\left|I&space;\circ\left(X-U&space;V^{T}\right)\right|{F}^{2}&plus;\frac{\lambda{1}}{2}\left|Y-U&space;W^{T}\right|{F}^{2}&plus;\frac{\lambda{2}}{2}\left|Z-V&space;V^{T}\right|{F}^{2}&plus;\frac{\lambda{3}}{2}\left(|U|{F}^{2}&plus;|V|{F}^{2}&plus;|W|_{F}^{2}\right))
+$$L(T, R, G, F)=\frac{1}{2}\left\|Y-T(G ; G)^{T}\right\|^{2}+\frac{\lambda_{1}}{2}\left\|X-T(R ; R)^{T}\right\|^{2} \\
++\frac{\lambda_{2}}{2}\left\|Z-R F^{T}\right\|^{2}+\frac{\lambda_{3}}{2}\left(\|T\|^{2}+\|R\|^{2}+\|G\|^{2}+\|F\|^{2}\right)
+$$
 
 2. 流形对齐（Manifold Alignment）
 
