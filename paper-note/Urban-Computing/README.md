@@ -148,9 +148,7 @@ Z是一个活动之间的相关性矩阵。
 
 最终的目标函数如下所示，前半部分即分解矩阵要尽可能和原矩阵接近，后半部分为正则项。
 
-$$L(U, V, W)=\frac{1}{2}\left\|I \circ\left(X-U V^{T}\right)\right\|_{F}^{2}+\frac{\lambda_{1}} \\
-{2}\left\|Y-U W^{T}\right\|_{F}^{2}+\frac{\lambda_{2}}{2}\left\|Z-V V^{T}\right\|_{F}^{2}+ \\
-\frac{\lambda_{3}}{2}\left(\|U\|_{F}^{2}+\|V\|_{F}^{2}+\|W\|_{F}^{2}\right)
+$$L(U, V, W)=\frac{1}{2}
 $$
 
 **例子11（估计路段的车速值）**
