@@ -5,7 +5,7 @@
 ### 多源数据定义
 
 来自不同领域的数据集，例如我们要改善城市规划，可能要用到的数据集有：路网数据，交通流量数据，POI数据，人口数据。
-这些数据就是来自不同领域的数据，需要更好地融合这些数据集中知识。
+这些数据就是来自不同领域的数据，需要更好地融合这些数据集中的知识。
 
 ### 方法分类
 1. **STAGE-BASED** 
@@ -162,9 +162,7 @@ $M_G$代表时间t，网格g的车流量，有平均值和实际值。
 
 目标函数为
 
-$$L(T, R, G, F)=\frac{1}{2}\left\|Y-T(G ; G)^{T}\right\|^{2}+\frac{\lambda_{1}}{2}\left\|X-T(R ; R)^{T}\right\|^{2} \\
-+\frac{\lambda_{2}}{2}\left\|Z-R F^{T}\right\|^{2}+\frac{\lambda_{3}}{2}\left(\|T\|^{2}+\|R\|^{2}+\|G\|^{2}+\|F\|^{2}\right)
-$$
+![text](https://latex.codecogs.com/gif.latex?L(U,&space;V,&space;W)=\frac{1}{2}\left|I&space;\circ\left(X-U&space;V^{T}\right)\right|{F}^{2}&plus;\frac{\lambda{1}}{2}\left|Y-U&space;W^{T}\right|{F}^{2}&plus;\frac{\lambda{2}}{2}\left|Z-V&space;V^{T}\right|{F}^{2}&plus;\frac{\lambda{3}}{2}\left(|U|{F}^{2}&plus;|V|{F}^{2}&plus;|W|_{F}^{2}\right))
 
 2. 流形对齐（Manifold Alignment）
 
