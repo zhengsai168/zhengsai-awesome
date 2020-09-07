@@ -148,8 +148,7 @@ Z是一个活动之间的相关性矩阵。
 
 最终的目标函数如下所示，前半部分即分解矩阵要尽可能和原矩阵接近，后半部分为正则项。
 
-$$L(U,V,W)=\frac{1}{2}\|I \circ(X-U V^{T})\|_{F}^{2}+\frac{\lambda_{1}}{2}\|Y-U W^{T}\|_{F}^{2}+\frac{\lambda_{2}}{2}\|Z-V V^{T}\|_{F}^{2}+\frac{\lambda_{3}}{2}(\|U\|_{F}^{2}+\|V\|_{F}^{2}+\|W\|_{F}^{2})
-$$
+![tex1](tex/1.png)
 
 **例子11（估计路段的车速值）**
 
@@ -163,9 +162,7 @@ $M_G$代表时间t，网格g的车流量，有平均值和实际值。
 
 目标函数为
 
-$$L(T, R, G, F)=\frac{1}{2}\left\|Y-T(G ; G)^{T}\right\|^{2}+\frac{\lambda_{1}}{2}\left\|X-T(R ; R)^{T}\right\|^{2} \\
-+\frac{\lambda_{2}}{2}\left\|Z-R F^{T}\right\|^{2}+\frac{\lambda_{3}}{2}\left(\|T\|^{2}+\|R\|^{2}+\|G\|^{2}+\|F\|^{2}\right)
-$$
+![tex2](tex/2.png)
 
 2. 流形对齐（Manifold Alignment）
 
