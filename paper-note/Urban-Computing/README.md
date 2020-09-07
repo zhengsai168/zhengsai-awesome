@@ -135,7 +135,50 @@ PCA（主成分分析）和CCA（典型相关性分析）
 
 1. 耦合矩阵分解（Coupled Matrix Factorization）
 
+**例子10（位置和活动的推荐）**
+
+![9](pic/9.png)
+
+X是一个稀疏矩阵，$X_{ij}$ 表示位置i出现活动j的频率，通过矩阵分解的方式进行缺失值填补。
+填补后可以进行推荐（对活动推荐topK位置，对位置推荐活动）。
+
+Y是一个位置的地理特征，比如POI信息
+
+Z是一个活动之间的相关性矩阵。
+
+最终的目标函数如下所示，前半部分即分解矩阵要尽可能和原矩阵接近，后半部分为正则项。
+
+$$L(U, V, W)=\frac{1}{2}\left\|I \circ\left(X-U V^{T}\right)\right\|_{F}^{2}+\frac{\lambda_{1}}{2}\left\|Y-U W^{T}\right\|_{F}^{2}+\frac{\lambda_{2}}{2}\left\|Z-V V^{T}\right\|_{F}^{2}+\frac{\lambda_{3}}{2}\left(\|U\|_{F}^{2}+\|V\|_{F}^{2}+\|W\|_{F}^{2}\right)$$
+
+**例子11（估计路段的车速值）**
+
+![10](pic/10.png)
+
+$M^{'}_r$代表时间t，路段r的车速实际值，$M_r$代表车速的平均值（基于历史数据），通过taxi轨迹数据建立，稀疏
+
+Z代表路段的特征，例如路段的POI，路段的限速，车道数等特征。
+
+$M_G$代表时间t，网格g的车流量，有平均值和实际值。
+
+目标函数为
+
+$$L(T, R, G, F)=\frac{1}{2}\left\|Y-T(G ; G)^{T}\right\|^{2}+\frac{\lambda_{1}}{2}\left\|X-T(R ; R)^{T}\right\|^{2} \\
++\frac{\lambda_{2}}{2}\left\|Z-R F^{T}\right\|^{2}+\frac{\lambda_{3}}{2}\left(\|T\|^{2}+\|R\|^{2}+\|G\|^{2}+\|F\|^{2}\right)
+$$
+
 2. 流形对齐（Manifold Alignment）
+
+**例子12（细粒度城市噪声）**
+
+![11](pic/11.png)
+
+X为区域特征，Z为噪声种类相关性，Y为时间t区域r的人流量。
+
+目标函数为
+
+![12](pic/12.png)
+
+前面是矩阵分解重建误差，后面是正则项
 
 3.3 **基于概率依存关系（Probabilistic Dependency-Based）**
 
