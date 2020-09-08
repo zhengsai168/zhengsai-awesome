@@ -1,14 +1,14 @@
-# 多源数据融合
-## 综述
+# 论文
+
 - Zheng, Y. (2015). Methodologies for Cross-Domain Data Fusion: An Overview. IEEE Transactions on Big Data, 1(1), 16–34. https://doi.org/10.1109/tbdata.2015.2465959
 
-### 多源数据定义
+# 多源数据定义
 
 来自不同领域的数据集，例如我们要改善城市规划，可能要用到的数据集有：路网数据，交通流量数据，POI数据，人口数据。
 这些数据就是来自不同领域的数据，需要更好地融合这些数据集中的知识。
 
-### 方法分类
-1. **STAGE-BASED** 
+# 方法分类
+## STAGE-BASED 
 
 在数据挖掘任务的不同阶段，采用不同的数据集。
 
@@ -44,15 +44,15 @@ stage3：由于不同用户的轨迹最终变成了驻留点向量，在不同�
 交通异常的定义：当一些事情（如火灾，游行，阅兵）发生时，周围的交通状况会表现出与平时不一样的行为模式
 
 
-2. **FEATURE-LEVEL-BASED**
+## FEATURE-LEVEL-BASED
 
-2.1 直接连接
+### 直接连接
 
 即将两个从数据集中提取出的特征向量直接拼接在一起。
 
 缺点：容易过拟合，忽略了特征之间的非线性关系和相关性。
 
-2.2 基于DNN的特征融合
+### 基于DNN的特征融合
 
 要融合视频和音频数据的特征，文本和图像的特征，可以采用AutoEndcoder的方式
 
@@ -66,9 +66,9 @@ C：用视频和音频一起重建视频和音频
 
 D：双向的，一个是用文本重建图像，一个是用图像重建文本
 
-3. **SEMANTIC MEANING-BASED**
+## **SEMANTIC MEANING-BASED**
 
-3.1 **基于多视图（Multi-View Based）**
+### 基于多视图（Multi-View Based）
 
 **多视图的定义**
 
@@ -79,7 +79,7 @@ D：双向的，一个是用文本重建图像，一个是用图像重建文本
 
 **多视图方法的分类**
 
-1. 基于协同训练的（co-training）
+**1. 基于协同训练的（co-training）**
 
 一个典型的协同训练过程：
 
@@ -101,7 +101,7 @@ label data：粗粒度空气质量
 
 unlabel data：细粒度的空气质量
 
-2. 基于多核学习的（Multi-Kernel Learning）
+**2. 基于多核学习的（Multi-Kernel Learning）**
 
 **MKL定义**
 
@@ -125,15 +125,15 @@ A learning method picks the best kernel, or uses a combination of these kernels.
 
 ![7](pic/7.png)
 
-3. 基于子空间的（subspace learning）
+**3. 基于子空间的（subspace learning）**
 
 ![8](pic/8.png)
 
 PCA（主成分分析）和CCA（典型相关性分析）
 
-3.2 **基于相似性（Similarity-Based）**
+### 基于相似性（Similarity-Based）
 
-1. 耦合矩阵分解（Coupled Matrix Factorization）
+**1. 耦合矩阵分解（Coupled Matrix Factorization）**
 
 **例子10（位置和活动的推荐）**
 
@@ -164,7 +164,7 @@ $M_G$代表时间t，网格g的车流量，有平均值和实际值。
 
 ![tex2](tex/2.png)
 
-2. 流形对齐（Manifold Alignment）
+**2. 流形对齐（Manifold Alignment）**
 
 **例子12（细粒度城市噪声）**
 
@@ -178,7 +178,7 @@ X为区域特征，Z为噪声种类相关性，Y为时间t区域r的人流量。
 
 前面是矩阵分解重建误差，后面是正则项
 
-3.3 **基于概率依存关系（Probabilistic Dependency-Based）**
+### 基于概率依存关系（Probabilistic Dependency-Based）
 
 **例子13（预测车流量）**
 
@@ -232,7 +232,7 @@ $m_{r,n}$就是从出租车行程中抽取出的人类行为模式特征，在LD
 
 ![15](pic/15.png)
 
-3.4 **基于迁移学习（Transfer Learning-Based）**
+### 基于迁移学习（Transfer Learning-Based）
 
 ![16](pic/16.png)
 
