@@ -1,2 +1,1 @@
-# zhengsai-awesome
-Zheng Sai's notebook about everything
+# [论文笔记](paper-note)
