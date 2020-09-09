@@ -40,6 +40,34 @@ fatal: LF would be replaced by CRLF
 git config --global core.autocrlf false
 ```
 
+# source
+
+```shell
+source 或 . 
+# 将脚本作为当前进程的一部分运行。
+a.sh 如下
+export JAVA_HOME=/tmp/jdk
+source a.sh #会在运行完a.sh后JAVA_HOME仍然有效
+```
+
+# 重定向
+
+```shell
+1> 的缩写 为 > 即重定向标准输出
+0< 的缩写 为 < 即重定向标准输入
+2> 为重定向标准错误
+```
+
+# shell脚本
+
+```shell
+#!/bin/bash -eu 
+# e选项，执行简单命令失败时会退出
+# u选项，展开未定义变量时，会报错退出
+./test.sh & # 后台执行test.sh
+(sleep 5; ./test.sh) & #一起后台
+```
+
 
 
 # ls    显示文件名  
