@@ -1,6 +1,6 @@
 # ls    显示文件名  
 
-```shell
+```Bash
 $ ls #显示当前目录文件列表
 ll #显示详细信息
 ```
@@ -144,7 +144,7 @@ $ uptime
 
 # free
 
-```shell
+```Bash
 $ free -m # 按MB显示内存情况
 $ free -g # 按GB显示内存情况
 ```
