@@ -1,3 +1,37 @@
+# 初始化文件
+
+```shell
+~/.bashrc  #登陆bash的时候默认执行的
+~/.vimrc   #vim配置文件
+```
+
+# vim配置文件
+
+```shell
+位置  ~/.vimrc  支持python
+set filetype=python
+au BufNewFile,BufRead *.py,*.pyw setf python
+set number
+set syntax=on
+set tabstop=4
+set softtabstop=4
+set autoindent
+set smartindent
+set completeopt=preview,menu
+set noeb
+set shiftwidth=4
+set expandtab
+inoremap ' ''<ESC>i
+inoremap " ""<ESC>i
+inoremap ( ()<ESC>i
+inoremap [ []<ESC>i
+inoremap { {<CR>}<ESC>O
+```
+
+
+
+
+
 # ls    显示文件名  
 
 ```Bash
