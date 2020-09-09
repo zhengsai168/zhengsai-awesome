@@ -28,7 +28,17 @@ inoremap [ []<ESC>i
 inoremap { {<CR>}<ESC>O
 ```
 
+# Git
 
+```shell
+git add .
+git commit -m 'test'
+git push
+
+
+fatal: LF would be replaced by CRLF
+git config --global core.autocrlf false
+```
 
 
 
