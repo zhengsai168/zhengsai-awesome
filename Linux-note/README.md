@@ -28,10 +28,12 @@ $ cp a.txt b.txt #复制a到b
 $ cp a.txt zs/ #复制a到zs文件夹
 ```
 
-# mv  更改文件名
+# mv  更改文件名/移动文件
 
 ```shell
 $ rm a.txt b.txt
+$ rm a.txt zs/
+$ rm a.txt zs/b.txt
 ```
 
 # grep  查找字符串
@@ -158,6 +160,13 @@ $ free -g # 按GB显示内存情况
 ```shell
 mkdir zs #创建zs目录
 mkdir -p zs/zzs/zsds #创建多级目录
+```
+
+# chmod
+
+```shell
+$ chmod 777 a.txt  # 文件变更权限
+$ chmod 777 -R zs/  # 文件夹权限
 ```
 
 
