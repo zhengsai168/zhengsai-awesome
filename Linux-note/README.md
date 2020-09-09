@@ -1,17 +1,17 @@
 # ls    显示文件名  
 
 ```Bash
-ls #显示当前目录文件列表
-ll #显示详细信息
+$ ls #显示当前目录文件列表
+$ ll #显示详细信息
 ```
 
 # cat  显示文件内容
 
 ```Bash
-cat a.txt #显示文件内容
-cat a.txt b.txt #多个文件内容拼接后显示
-cat > a.txt <<EOF #按行输入到a（覆盖），直到EOF
-cat >> a.txt <<EOF #按行追加到a末尾，知道EOF
+$ cat a.txt #显示文件内容
+$ cat a.txt b.txt #多个文件内容拼接后显示
+$ cat > a.txt <<EOF #按行输入到a（覆盖），直到EOF
+$ cat >> a.txt <<EOF #按行追加到a末尾，知道EOF
 ```
 
 # rm  删除文件
@@ -119,7 +119,7 @@ echo: /usr/bin/echo /usr/share/man/man1/echo.1.gz /usr/share/man/man1p/echo.1p.g
 # locate 
 
 ```shell
-$ cate python #全局搜索路径带python的文件
+$ locate python #全局搜索路径带python的文件
 ```
 
 # who w finger
@@ -148,10 +148,6 @@ $ uptime
 free -m # 按MB显示内存情况
 free -g # 按GB显示内存情况
 ```
-
-
-
-是
 
 
 
