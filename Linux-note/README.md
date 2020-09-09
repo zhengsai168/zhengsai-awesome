@@ -145,8 +145,19 @@ $ uptime
 # free
 
 ```Bash
-free -m # 按MB显示内存情况
-free -g # 按GB显示内存情况
+$ free -m # 按MB显示内存情况
+$ free -g # 按GB显示内存情况
+```
+
+# pwd
+
+显示当前路径
+
+# mkdir
+
+```shell
+mkdir zs #创建zs目录
+mkdir -p zs/zzs/zsds #创建多级目录
 ```
 
 
