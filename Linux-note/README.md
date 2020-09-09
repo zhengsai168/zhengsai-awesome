@@ -3,6 +3,7 @@
 ```Bash
 $ ls #显示当前目录文件列表
 $ ll #显示详细信息
+$ ls a* #显示以a开头的文件
 ```
 
 # cat  显示文件内容
@@ -26,6 +27,12 @@ $ rm -rf ./ #强制删除当前目录所有文件
 ```shell
 $ cp a.txt b.txt #复制a到b
 $ cp a.txt zs/ #复制a到zs文件夹
+```
+
+# scp
+
+```shell
+$ scp a.txt app@10.241.241.14:/data/ #复制文件到/data文件夹下
 ```
 
 # mv  更改文件名/移动文件
@@ -168,6 +175,31 @@ mkdir -p zs/zzs/zsds #创建多级目录
 $ chmod 777 a.txt  # 文件变更权限
 $ chmod 777 -R zs/  # 文件夹权限
 ```
+
+# 链 && 和||
+
+```shell
+$ comd1 && comd2 # 当comd1退出状态为0（真）时，执行2
+$ comd1 || comd2 # 当comd2退出状态为1（假）时，执行2
+```
+
+# ps
+
+```shell
+$ ps # 前台进程？
+$ ps -ef # 全部进程
+```
+
+# kill
+
+```shell
+$ kill 24234 #杀死pid为24234的进程
+$ kill -9 24234 #强制杀死pid为24234的进程
+$ ps -ef | grep sql  # 查找sql进程
+$ kill -9 xxxx
+```
+
+
 
 
 
