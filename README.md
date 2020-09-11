@@ -2,3 +2,5 @@
 
 # [Linux笔记](Linux-note)
 
+# [Python笔记](python-note)
+
