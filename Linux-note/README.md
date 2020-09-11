@@ -68,6 +68,105 @@ source a.sh #会在运行完a.sh后JAVA_HOME仍然有效
 (sleep 5; ./test.sh) & #一起后台
 ```
 
+# 控制结构
+
+```shell
+read -p 'please input word1:' word1
+read -p 'please input word2:' word2
+if test $word1 = $word2
+    then 
+    	echo "Match"
+fi  
+echo "End!!!"
+```
+
+# $# 参数个数  $1 第一个参数
+
+```shell
+if test $# -eq 0
+    then echo "0 argument"
+    exit 1
+fi
+if test -f $1
+    then
+        echo "$1 is a file"
+    else
+        echo "$1 is not a file"
+fi
+echo "End!!!"
+
+```
+
+# if ... then ... else ... 和 if ... then ... elif ... then ... else ...
+
+```shell
+read -p 'input word1:' word1
+read -p 'input word2:' word2
+read -p 'input word3:' word3
+if [ $word1 = $word2 -a $word1 = $word3 ]
+    then
+        echo 'match word 1,2,3'
+    elif [ $word1 = $word2 ]
+    then
+        echo 'match wrod 1,2'
+    elif [ $word1 = $word3 ]
+    then
+        echo 'match word 1,3'
+    elif [ $word2 = $word3 ]
+    then
+        echo 'match word 2,3'
+    else
+        echo 'no match'
+fi
+
+```
+
+```shell
+test 等价于 []
+test $# -eq 0
+[$# -eq 0]
+-a 与  -o 或
+[ $1 = $2 -a $1 = $3 ]
+[ $1 = $2 -o $1 = $3 ]
+
+```
+
+# 循环 for ... in ... do ... done
+
+```shell
+for i in 1 2 3
+    do
+        if [ $i -gt 1 ]
+            then
+                echo $i
+        fi
+    done
+```
+
+# while ... do ... done
+
+# util ... do ... done
+
+# case 
+
+```shell
+read -p 'input A,B or C:' x
+case $x in
+    A)
+        echo "You input A"
+        ;;
+    B|b)
+        echo "You input B or b"
+        ;;
+    C)
+        echo "You inout C"
+        ;;
+    *)
+        echo "You did not input A,B or C"
+esac
+
+```
+
 
 
 # ls    显示文件名  
@@ -271,9 +370,13 @@ $ ps -ef | grep sql  # 查找sql进程
 $ kill -9 xxxx
 ```
 
+# read
+
+```shell
+read -p 'please input' word1  #输出提示信息，输入word1
+```
 
 
-11111
 
 
 
