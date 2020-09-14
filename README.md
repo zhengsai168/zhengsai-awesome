@@ -4,3 +4,5 @@
 
 # [Python笔记](python-note)
 
+# [算法题笔记](algorithm-note)
+
