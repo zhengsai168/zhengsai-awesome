@@ -6,6 +6,10 @@
 
 ### [Python标准库](python-note)
 
+### [jupyter notebook](python-note/jupyter)
+
+### [numpy](python-note/numpy-note)
+
 # [算法题笔记](algorithm-note)
 
 # [周报](work-note)
