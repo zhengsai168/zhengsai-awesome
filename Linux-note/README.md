@@ -370,6 +370,7 @@ $ kill 24234 #杀死pid为24234的进程
 $ kill -9 24234 #强制杀死pid为24234的进程
 $ ps -ef | grep sql  # 查找sql进程
 $ kill -9 xxxx
+$ killall -u app # 杀死app用户的所有进程 (在root权限下)
 ```
 
 # read
