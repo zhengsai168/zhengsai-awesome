@@ -10,6 +10,8 @@
 
 ### [numpy](python-note/numpy-note)
 
+### [pandas](python-note/pandas)
+
 # [算法题笔记](algorithm-note)
 
 # [周报](work-note)
