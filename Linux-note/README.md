@@ -35,9 +35,16 @@ git add .
 git commit -m 'test'
 git push
 
-
+# 报错
 fatal: LF would be replaced by CRLF
 git config --global core.autocrlf false
+
+# 保存用户名和密码
+全局:
+git config credential.helper store
+
+只配置当前：
+git config --global credential.helper store
 ```
 
 # source

@@ -13,3 +13,16 @@
   - 确认java端没有问题后，仔细阅读网关sdk代码，发现了空格丢失的原因：对接受到的字符串类型的data做了strip()操作。
   - 修改代码后，通过fateflow测试sdk替换后的结果，10多轮secure_boost，均正常。
 
+## 9-21 ~ 9-25
+
+- 数字网关项目
+  - SDK通信替换FATE通信
+    - 目前采用直接传输RollPair所指向的数据的方案
+    - 在secure_boost模型上测试正常
+
+- 时空自动机器学习
+  - 看书《深入理解AutoML和AutoDL》，大致了解了下现有的一些AutoML的方法和一些开源框架。
+  - 在KuAI上学习了创建了自定义的docker镜像并上传和使用，且阅读了KuAI的使用文档
+
+- 时空多源数据融合
+  - 阅读论文并做了简单的笔记和ppt：《Methodologies for Cross-Domain Data Fusion: An Overview》，笔记和ppt位置：https://github.com/zhengsai168/zhengsai-awesome/tree/master/paper-note/Urban-Computing/%E5%A4%9A%E6%BA%90%E6%95%B0%E6%8D%AE%E8%9E%8D%E5%90%88-%E7%BB%BC%E8%BF%B0
