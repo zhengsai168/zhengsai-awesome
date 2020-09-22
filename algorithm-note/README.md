@@ -1,5 +1,23 @@
 # STL
 
+## 二分 lower_bound和upper_bound
+
+```cpp
+//必须有序，二分查找位置
+int a[]={1,3,4,5,6};
+sort(a,a+5);  
+lower_bound(a,a+5,2)-a;
+//返回第一个大于等于2的元素的位置
+upper_bound(a,a+5,2)-a;
+//返回第一个大于2的元素的位置
+vector<int> a；
+lower_bound(a.begin(),a.end(),2)-a.begin();
+upper_bound(a.begin(),a.end(),2)-a.begin();
+
+```
+
+
+
 ## pair
 
 ```cpp
@@ -42,6 +60,105 @@ sort(v.begin(),v.end());
 v.push_back(11);
 //清空
 v.clear(); //元素个数清为0
+```
+
+## stack 栈
+
+```cpp
+// 定义
+stack<int>s;
+s.empty() //栈为空则返回真
+
+s.pop() //移除栈顶元素
+
+s.push() //在栈顶增加元素
+
+s.size() //返回栈中元素数目
+
+s.top() //返回栈顶元素
+```
+
+## queue  队列
+
+```cpp
+queue<int>q;
+q.front(); //队首
+q.back();  //队尾
+q.empty(); //是否为空
+q.size();  //个数
+q.push();  //队尾插入元素
+q.pop();   //队首弹出元素
+```
+
+## deque 双端队列
+
+``` cpp
+deque<int>q;
+q.front(); //队首
+q.back();  //队尾
+q.empty(); //是否为空
+q.size();  //个数
+q.push_back();  //队尾插入元素
+q.push_front(); //队首插入元素
+q.pop_back();   //队尾弹出元素
+q.pop_front();  //队首弹出元素
+```
+
+## priority_queue 优先队列
+
+```cpp
+//小顶堆
+priority_queue <int,vector<int>,greater<int> > q;
+//大顶堆
+priority_queue <int,vector<int>,less<int> >q;
+//默认为大顶堆
+priority_queue<int>q;
+
+top //访问队头元素
+empty //队列是否为空
+size //返回队列内元素个数
+push //插入元素到队尾 (并排序)
+pop //弹出队头元素
+
+//自定义优先级
+struct tmp1 //运算符重载<
+{
+    int x;
+    tmp1(int a) {x = a;}
+    bool operator<(const tmp1& a) const
+    {
+        return x < a.x; //大顶堆
+    }
+};    
+
+// 传pair，先比较第一个再比较第二个，默认大顶
+priority_queue<pair<int, int> > a;
+// 小顶
+priority_queue<pair<int, int> , vector<pair<int, int> >, greater<pair<int, int> > > q;
+```
+
+## set(不重复)  multiset(可重复)
+
+```cpp
+set<int>s; 
+s.insert(1);  //插入
+s.erase(1);  //删除，删除没有的元素不报错。
+s.count(1);  //
+s.begin();  //默认升序，返回第一个
+s.end();
+s.size();
+auto it = s.lower_bound(1);
+auto it = s.find(1);
+it++;
+*it;
+```
+
+## map
+
+```cpp
+map<int,int>mp;
+mp[0]=1;  //默认为0
+cout<<mp[0]<<endl;
 ```
 
 
