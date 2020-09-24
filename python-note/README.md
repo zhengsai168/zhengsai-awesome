@@ -35,3 +35,26 @@ x = [t(2,3),t(2,4),t(1,5),t(3,4)]
 x.sort()
 ```
 
+# logging
+
+```python
+# 同时输出到文件和控制台
+log_format = '%(asctime)s %(message)s'
+logging.basicConfig(stream=sys.stdout, level=logging.INFO,
+    format=log_format, datefmt='%m/%d %I:%M:%S %p')
+fh = logging.FileHandler('log.txt')
+fh.setFormatter(logging.Formatter(log_format))
+logging.getLogger().addHandler(fh)
+
+```
+
+# argparse
+
+```python	
+import argparse
+parser = argparse.ArgumentParser("")
+parser.add_argument('--batch_size', type=int, default=64, help='batch size')
+parser.add_argument('--learning_rate', type=float, default=0.025, help='init learning rate')
+parser.add_argument('--cutout', action='store_true', default=False, help='use cutout')
+```
+

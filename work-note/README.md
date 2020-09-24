@@ -25,5 +25,5 @@
   - 在KuAI上学习了创建了自定义的docker镜像并上传和使用，且阅读了KuAI的使用文档
 
 - 时空多源数据融合
-  - 阅读论文并做了简单的笔记和ppt：《Methodologies for Cross-Domain Data Fusion: An Overview》，笔记和ppt位置：https://github.com/zhengsai168/zhengsai-awesome/tree/master/paper-note/Urban-Computing/%E5%A4%9A%E6%BA%90%E6%95%B0%E6%8D%AE%E8%9E%8D%E5%90%88-%E7%BB%BC%E8%BF%B0
+  - 阅读论文并做了简单的笔记和ppt：《Methodologies for Cross-Domain Data Fusion: An Overview》。
 

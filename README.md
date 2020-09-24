@@ -4,6 +4,8 @@
 
 # [Python笔记](python-note)
 
+# [Torch](python-note/torch)
+
 ### [Python标准库](python-note)
 
 ### [jupyter notebook](python-note/jupyter)
