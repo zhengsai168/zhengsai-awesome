@@ -1,12 +1,39 @@
 # tips
 
 ```python
+# define tensor
+x = torch.from_numpy(a)
+
+# tensor size
+x.size()
+
+# get data
+x = torch.randn(1)
+x.item()
+x.numpy()
+
+# gpu cpu
+device = torch.device("cpu")
+device = torch.device("cuda:0")
+device = torch.device("cuda:1")
+
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+
+x = x.to(device)
+
+# save model
+PATH = './cifar_net.pth'
+torch.save(net.state_dict(), PATH)
+
+# load model
+net = Net()
+net.load_state_dict(torch.load(PATH))
 
 ```
 
 
 
-# demo
+# train model demo
 
 ```python
 import torch
@@ -92,5 +119,16 @@ print('Accuracy of the network on the 10000 test images: %d %%' % (100 * correct
 
 ```
 
+# BP demo
 
+```python
+import torch
+x = torch.ones(2, 2, requires_grad=True)
+y = x + 2
+z = y*y*3
+out = z.mean()
+out.backward()   # out必须是个标量(即单个数值)
+print(x.grad)
+print(out)
+```
 
