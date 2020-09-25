@@ -1,3 +1,21 @@
+# vector建图
+
+```cpp
+// 建图和初始化
+vector<vector<int> >e(500005);
+for(int i=1;i<=n;i++){
+            e[i].clear();
+        }
+// 添加 边(x,y)
+e[x].push_back(y);
+// 遍历
+for(int i=0;i<e[x].size();i++){
+        ans+=dfs(e[x][i],d+1);
+    }
+```
+
+
+
 # gcd
 
 ```cpp
