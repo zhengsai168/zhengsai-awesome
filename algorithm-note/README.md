@@ -1,3 +1,11 @@
+# gcd
+
+```cpp
+int gcd(int x, int y) {
+	return !x ? y : gcd(y % x, x);
+}
+```
+
 # STL
 
 ## 二分 lower_bound和upper_bound
