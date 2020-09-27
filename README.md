@@ -18,3 +18,4 @@
 
 # [周报](work-note)
 
+# [简历](resume)
