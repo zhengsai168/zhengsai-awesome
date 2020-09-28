@@ -16,6 +16,10 @@
 
 # [算法题笔记](algorithm-note)
 
+## [C++模板](algorithm-note)
+
+## [LeetCode题目分类+模板(python)](algorithm-note/LeetCode)
+
 # [周报](work-note)
 
 # [简历](resume)
