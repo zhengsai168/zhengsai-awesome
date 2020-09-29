@@ -4,6 +4,30 @@
 
 [117. 填充每个节点的下一个右侧节点指针 II](https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node-ii/)
 
+- 前/中/后序遍历
+
+```python
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+前序：
+访问root
+dfs(root.left)
+dfs(root.right)
+中序：
+dfs(root.left)
+访问root
+dfs(root.right)
+后序：
+dfs(root.left)
+dfs(root.right)
+访问root
+```
+
+#### [145. 二叉树的后序遍历](https://leetcode-cn.com/problems/binary-tree-postorder-traversal/)
+
 # 枚举
 
 - 二进制枚举
