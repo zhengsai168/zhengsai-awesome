@@ -28,6 +28,12 @@ dfs(root.right)
 
 #### [145. 二叉树的后序遍历](https://leetcode-cn.com/problems/binary-tree-postorder-traversal/)
 
+# BST(Binary Search Tree，二叉搜索树/查找/排序树)
+
+- 插入操作
+
+#### [701. 二叉搜索树中的插入操作](https://leetcode-cn.com/problems/insert-into-a-binary-search-tree/)
+
 # 枚举
 
 - 二进制枚举
