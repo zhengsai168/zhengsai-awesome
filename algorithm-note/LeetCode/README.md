@@ -40,3 +40,8 @@ dfs(root.right)
 
 #### [1601. 最多可达成的换楼请求数目](https://leetcode-cn.com/problems/maximum-number-of-achievable-transfer-requests/)
 
+# DP
+#### [LCP 19. 秋叶收藏集](https://leetcode-cn.com/problems/UlBDOe/)
+- 描述： 将一个只有r和y的字符串（例如"rrryyyrryyyrr"），转换为转换为 ryr 这样的字符串序列，至少需要替换几次？
+- dp方程： dp[i][0],dp[i][1],dp[i][2] 代表到第i个字符串，状态为0（r），1（ry），2（ryr）需要几次？
+
