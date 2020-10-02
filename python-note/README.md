@@ -1,3 +1,10 @@
+# 字符串
+
+```python 
+s.count('a')  # 子串个数（不重叠）
+s.split(' ')  # 返回以空格隔开的子串列表
+```
+
 # 具名元组 | namedtuple
 
 ```python
