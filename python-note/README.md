@@ -1,3 +1,12 @@
+# math
+
+```python
+# 返回点（dx，dy）对于（0，0）的弧度值 -pi~pi
+atan2(dy,dx)  
+```
+
+
+
 # 字符串
 
 ```python 
