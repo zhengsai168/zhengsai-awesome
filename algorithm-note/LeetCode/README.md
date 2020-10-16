@@ -36,6 +36,10 @@ dfs(root.right)
 
 # BST(Binary Search Tree，二叉搜索树/查找/排序树)
 
+- 性质
+
+中序遍历，递增有序
+
 - 插入操作
 
 #### [701. 二叉搜索树中的插入操作](https://leetcode-cn.com/problems/insert-into-a-binary-search-tree/)

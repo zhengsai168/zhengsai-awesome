@@ -27,3 +27,8 @@
 - 时空多源数据融合
   - 阅读论文并做了简单的笔记和ppt：《Methodologies for Cross-Domain Data Fusion: An Overview》。
 
+## 10-12 ~ 10-6
+
+- 数字网关项目
+  - 调研了开源FL库：FedML并做了分享，其特点为灵活，主要用于FL科研。
+  - 协助@王若兰，@杜师帅进行3.0版本的FATE和网关的迁移，DataIO组件。

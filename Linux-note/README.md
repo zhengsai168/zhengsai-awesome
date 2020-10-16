@@ -199,7 +199,6 @@ $ cat >> a.txt <<EOF #按行追加到a末尾，知道EOF
 ```shell
 $ rm a.txt #删除文件
 $ rm -rf ./ #强制删除当前目录所有文件
--n # 不覆盖原有文件
 ```
 
 # cp  复制文件
@@ -207,6 +206,8 @@ $ rm -rf ./ #强制删除当前目录所有文件
 ```shell
 $ cp a.txt b.txt #复制a到b
 $ cp a.txt zs/ #复制a到zs文件夹
+-n # 不覆盖原有文件
+-r # 递归复制
 ```
 
 # scp
