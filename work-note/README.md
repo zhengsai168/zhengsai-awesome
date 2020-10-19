@@ -1,3 +1,39 @@
+# FATE特征工程
+
+- FederatedSample
+
+上采样/下采样，分层采样
+
+上采样：新建一个Table
+
+下采样：.join（）操作
+
+参数：
+
+```python
+
+```
+
+
+
+- FeatureScale
+
+
+
+- HeteroFeatureBinning
+
+
+
+- OneHotEncoder
+
+
+
+- HeteroFeatureSelection
+
+
+
+
+
 # 2020
 
 ## 9-14 ~ 9-18

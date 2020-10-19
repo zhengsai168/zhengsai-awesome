@@ -42,6 +42,22 @@ upper_bound(a.begin(),a.end(),2)-a.begin();
 
 ```
 
+# string
+
+```cpp
+//初始话
+string s;
+string s="123";
+string s("123");
+//赋值
+s = "123";
+//比较
+s[i] == '#';
+s.push_back(c);
+s.pop_back(c);
+for(char c:s)
+```
+
 
 
 ## pair
@@ -86,6 +102,7 @@ sort(v.begin(),v.end());
 v.push_back(11);
 //清空
 v.clear(); //元素个数清为0
+v.resize(n,v);  //重新设置大小
 ```
 
 ## stack 栈
