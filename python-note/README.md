@@ -1,11 +1,96 @@
+# 多线程/多进程
+
+- 多线程
+
+```python
+import os
+import time
+import threading
+def tstart(arg):
+    var = 0
+    for i in range(100000000):
+        var += 1
+
+if __name__ == '__main__':
+    t1 = threading.Thread(target=tstart, args=('This is thread 1',))
+    t2 = threading.Thread(target=tstart, args=('This is thread 2',))
+    start_time = time.time()
+    t1.start()
+    t2.start()
+    t1.join()
+    t2.join()
+    print("Two thread cost time: %s" % (time.time() - start_time))
+    start_time = time.time()
+    tstart("This is thread 0")
+    print("Main thread cost time: %s" % (time.time() - start_time))
+```
+
+- 多进程
+
+```python
+from multiprocessing import Process  
+import os, time
+
+def pstart(arg):
+    var = 0
+    for i in range(100000000):
+        var += 1
+
+if __name__ == '__main__':
+    p1 = Process(target = pstart, args = ("1", ))
+    p2 = Process(target = pstart, args = ("2", ))
+    start_time = time.time()
+    p1.start()
+    p2.start()
+    p1.join()
+    p2.join()
+    print("Two process cost time: %s" % (time.time() - start_time))
+    start_time = time.time()
+    pstart("0")
+    print("Current process cost time: %s" % (time.time() - start_time))
+```
+
+- 线程池，进程池
+
+```python
+from concurrent.futures import ThreadPoolExecutor,ProcessPoolExecutor
+import time,os
+
+def tstart(arg):
+    var = 0
+    for i in range(100000000):
+        var += 1
+    return var
+def finished(future):
+	print(id(future))
+	print("thread has finished")
+
+if __name__ == '__main__':
+	executor=ThreadPoolExecutor(max_workers=3)
+	# 最大进程/线程数 为3
+    start = time.time()
+	f1 = executor.submit(tstart,"1")
+	f2 = executor.submit(tstart,"2")
+	# 提交任务
+    f1.add_done_callback(finished)
+	f2.add_done_callback(finished)
+    # 回调函数，即完成时会执行的函数
+	executor.shutdown(True)
+    # 等待全部完成
+	print(time.time()-start)
+	start = time.time()
+	tstart("1")
+	print(time.time()-start)
+```
+
+
+
 # math
 
 ```python
 # 返回点（dx，dy）对于（0，0）的弧度值 -pi~pi
 atan2(dy,dx)  
 ```
-
-
 
 # 字符串
 

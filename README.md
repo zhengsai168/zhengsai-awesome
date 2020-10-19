@@ -23,3 +23,9 @@
 # [周报](work-note)
 
 # [简历](resume)
+
+
+
+# tmp
+
+- Python由于GIL（Global Interpreter Lock，全局解释锁）的存在，使得一个核在同一时间只能运行一个线程，所以多线程反而变慢了（对于cpu密集型任务）。推荐使用multi
