@@ -1,3 +1,23 @@
+# 异常处理
+
+```python
+使用try 会在捕获异常后继续执行
+不适用try 用 raise 直接抛出异常程序会中断执行，退出
+try:
+    # 要捕获异常的代码
+except Exception as e:
+    # 捕获到了异常
+    print(e)
+else:
+    # 正常运行
+finally:
+    # 都运行
+    
+raise ValueError("111")  # 主动抛出异常
+```
+
+
+
 # 多线程/多进程
 
 - 多线程
