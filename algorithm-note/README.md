@@ -55,7 +55,7 @@ s = "123";
 s[i] == '#';
 s.push_back(c);
 s.pop_back(c);
-for(char c:s)
+for(char c:s){}
 ```
 
 
@@ -96,6 +96,7 @@ vector<vector<int> >e(100);
 //访问
 v[0]=1;
 v.size() //个数
+for(int num:v){}
 //排序
 sort(v.begin(),v.end());
 //添加
