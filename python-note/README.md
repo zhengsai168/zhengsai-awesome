@@ -1,3 +1,38 @@
+# 装饰器和闭包
+
+```python
+# 闭包
+def decorate_func(func):
+	a = 1   # 不可变
+	b = []
+	def inner():
+		nonlocal a # 不可变 ，引用外面函数的变量，需要nonlocal
+		a += 1     
+		b.append(3)  # 可变， 直接引用
+		# a, b 由于用了外面函数的量，就被绑定到了内部函数上，成为了自由变量 ，这里就构成了一个闭包
+		return func
+	return inner
+    
+
+# 计时装饰器
+def clock(func):
+	def inner(*args,**kwargs):
+		start = time.time()
+		res = func(*args,**kwargs)
+		args_str = [repr(arg) for arg in args]
+		args_str = ', '.join(args_str)
+		kwargs_str = [k+"="+repr(v) for k,v in sorted(kwargs.items())]
+		kwargs_str = ', '.join(kwargs_str)
+		print("func name:{} ({}, {}),time: {}s".format(func.__name__, args_str, kwargs_str,time.time() - start))
+		return res
+	return inner
+
+# 等价于 add = clock(add)
+@clock
+def add(a,b):
+    return a+b
+```
+
 # 异常处理
 
 ```python
@@ -177,5 +212,7 @@ parser = argparse.ArgumentParser("")
 parser.add_argument('--batch_size', type=int, default=64, help='batch size')
 parser.add_argument('--learning_rate', type=float, default=0.025, help='init learning rate')
 parser.add_argument('--cutout', action='store_true', default=False, help='use cutout')
+args = parser.parser_args()
+args.batch_size
 ```
 
