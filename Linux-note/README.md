@@ -1,3 +1,20 @@
+# 域名映射
+
+```shell
+文件路径： /etc/hosts
+映射方式
+10.241.241.7 after-end-jd-fedai.jd.com
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+
+windows 域名映射
+文件路径 C:\Windows\System32\drivers\etc\hosts
+映射方式 
+# 数字网关v2.3
+114.67.224.8 master-fedai-test-new.jd.com
+```
+
+
+
 # 初始化文件
 
 ```shell
