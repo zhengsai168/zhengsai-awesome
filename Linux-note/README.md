@@ -349,11 +349,18 @@ $ uptime
 # 当前时间，运行时间，用户数，过去1,5,15分钟平均任务数
 ```
 
-# free
+# free 内存
 
 ```Bash
 $ free -m # 按MB显示内存情况
 $ free -g # 按GB显示内存情况
+$ free -h # 显示内存情况
+```
+
+# df 硬盘
+
+```shell
+df -h # 查看硬盘使用情况
 ```
 
 # pwd
@@ -396,12 +403,26 @@ $ kill -9 24234 #强制杀死pid为24234的进程
 $ ps -ef | grep sql  # 查找sql进程
 $ kill -9 xxxx
 $ killall -u app # 杀死app用户的所有进程 (在root权限下)
+$ ps aux | grep P61-T10-I1 |  awk '{print $2}' | xargs kill -9   # kill所有带P61-T10-I1的进程
 ```
 
 # read
 
 ```shell
 read -p 'please input' word1  #输出提示信息，输入word1
+```
+
+# top
+
+```shell
+先输入top
+
+然后
+
+按P – 以 CPU 占用率大小的顺序排列进程列表
+
+按M – 以内存占用率大小的顺序排列进程列表
+
 ```
 
 
