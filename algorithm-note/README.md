@@ -1,3 +1,51 @@
+# 遍历容器
+
+```cpp
+vector<int> v;
+for(int& it : v){}  //引用形式。改变it会改变v
+string s;
+for(char& c : s){}
+vector<string> v; 
+for(string s : v){}  //非引用，改变it不改变原容器
+```
+
+
+
+# 排列组合
+
+```python
+from scipy.special import comb, perm
+# LeetCode 不用import了，直接用函数即可
+comb(4,2)  # 6
+perm(4,2)  # 12 
+```
+
+# python记忆化搜索
+
+```python
+
+@lru_cache(None)
+def dfs()
+```
+
+
+
+
+
+# 二分
+
+```python
+while l<=r:
+    mid = (l+r)//2
+    if check(mid):
+        ans = mid
+        l = mid + 1
+    else:
+        r = mid -1
+```
+
+
+
 # vector建图
 
 ```cpp
@@ -101,6 +149,7 @@ for(int num:v){}
 sort(v.begin(),v.end());
 //添加
 v.push_back(11);
+v.emplace_back();  //参数为空时，添加一个默认的值。如int -> 0  ,vector<int> -> 空的vector。
 //清空
 v.clear(); //元素个数清为0
 v.resize(n,v);  //重新设置大小

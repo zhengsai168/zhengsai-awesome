@@ -1,3 +1,14 @@
+# atexit.register
+
+```python
+import atexit
+@atexit.register
+def func():
+#    程序退出时调用此函数
+```
+
+
+
 # 装饰器和闭包
 
 ```python
