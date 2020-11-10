@@ -8,6 +8,8 @@
 
 ### [Python标准库](python-note)
 
+### [Python规范](python-note/python-rule)
+
 ### [jupyter notebook](python-note/jupyter)
 
 ### [numpy](python-note/numpy-note)

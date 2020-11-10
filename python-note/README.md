@@ -2,9 +2,16 @@
 
 ```python
 import atexit
+# 无参函数可用装饰器修饰
 @atexit.register
 def func():
+    #    程序退出时调用此函数
+
+# 带参函数可调用注册函数传参数。
+def func(name):
+    print(name)
 #    程序退出时调用此函数
+atexit.register(func, "first")
 ```
 
 
