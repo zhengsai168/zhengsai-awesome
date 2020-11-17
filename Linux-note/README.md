@@ -57,6 +57,7 @@ inoremap { {<CR>}<ESC>O
 
 ```shell
 git add .
+git add -A
 git commit -m 'test'
 git push
 
