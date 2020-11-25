@@ -10,10 +10,6 @@ nohup 命令 &
 ~/.bashrc
 ```
 
-
-
-
-
 # 域名映射
 
 ```shell
