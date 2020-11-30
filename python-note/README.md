@@ -156,7 +156,18 @@ if __name__ == '__main__':
 	print(time.time()-start)
 ```
 
+# 堆heapq
 
+```python
+# 堆是定义在一个list上的，默认小顶堆，即顶部是最小的元素
+h = []  # 以空的堆开始
+h = [3,4,1] #以空的堆开始
+heapq.heapify(h)
+heapq.heappush(h,2) # push
+heapq.heappop(h)  # pop ，返回pop的值
+h[0]  # 访问堆顶元素
+len(h)==0  # 判断堆是否为空
+```
 
 # math
 
