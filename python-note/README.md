@@ -1,3 +1,32 @@
+# conda更换源
+
+```python
+windows:  C://用户/zhengsai3/.condarc
+    
+ssl_verify: true
+show_channel_urls: true
+
+channels:
+  - http://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/win-64/
+  - http://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/win-64/
+  - http://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/
+```
+
+
+
+# list列表
+
+```python
+l = []
+l.append(1)  # [1]
+l.extend('123')  # [1,'1','2','3']  # 迭代着添加到末尾
+l.insert(2,10)  # [1,'1',10,'2','3']
+l.pop(-2)  l.pop(0)  l.pop()  # 默认删除最后一个
+l.clear()  
+l.remove('1')  # 删除指定元素
+del l[2]  del l[::2]  # 按索引删除，可以用切片
+```
+
 # atexit.register
 
 ```python
@@ -156,6 +185,16 @@ if __name__ == '__main__':
 	print(time.time()-start)
 ```
 
+# 二分bisect
+
+```python
+bisect.bisect_left(a,x,lo=0,hi=len(a)) # -> lower_bound
+# 返回第一个大于等于x的数的位置，如果没有大于等于x的数，则返回hi（默认为len（a））
+# 若列表a中存在x，则返回x的左侧位置，即最左的x的位置
+# 若列表中不存在x，则返回x的对应插入位置，
+bisect.bisect_right()  # -> upper_bound
+```
+
 # 堆heapq
 
 ```python
@@ -169,6 +208,21 @@ h[0]  # 访问堆顶元素
 len(h)==0  # 判断堆是否为空
 ```
 
+# 双向队列
+
+```python
+import collections
+d = collections.deque()  # 创建
+d.append(1)   # 右边入队
+d.appendleft(1) # 左边入队
+d.pop()     # 右边出队
+d.popleft()  # 左边出队
+d[0]  # 最左
+d[-1]  # 最右
+```
+
+
+
 # math
 
 ```python
@@ -179,8 +233,15 @@ atan2(dy,dx)
 # 字符串
 
 ```python 
+# 字符串格式化输出
+s = 'a = {},b = {}'.format(a,b)
+s = f'a = {a}, b = {b}'
 s.count('a')  # 子串个数（不重叠）
 s.split(' ')  # 返回以空格隔开的子串列表
+'-'.join(['1','3','4'])  # '1-3-4'
+s.strip() # 移除首尾空格
+s.strip('a')  # 移除首尾的a
+s.replace('is','was')  # 把字符串里的is换成was 
 ```
 
 # 具名元组 | namedtuple

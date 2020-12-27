@@ -1,3 +1,244 @@
+# 拓扑排序
+
+```cpp
+const int maxn=550;
+int L[maxn];  // 拓扑排序的顺序
+vector<int>g[maxn];  // 图  
+int du[maxn],n,m;   // du-> 入度  n点的个数 从1开始计数
+
+bool topsort(){
+    memset(du,0,sizeof(du));
+    for(int i=1;i<=n;i++)
+        for(int j=0;j<g[i].size();j++)
+            du[g[i][j]]++;
+    int tot=0;
+    priority_queue<int,vector<int>,greater<int> >Q; // 小编号优先
+    // queue<int>Q;   // 不需要小编号优先
+    for(int i=1;i<=n;i++){
+        if(du[i]==0)Q.push(i);
+    }
+    while(!Q.empty()){
+        int x=Q.top();Q.pop();
+        L[tot++]=x;
+        for(int j=0;j<g[x].size();j++){
+            int t=g[x][j];
+            du[t]--;
+            if(!du[t])Q.push(t);
+        }
+    }
+    if(tot==n)return 1;  // 可以形成拓扑排序 
+    return 0;   // 不可以形成
+}
+
+```
+
+
+
+# 树状数组
+
+```cpp
+const int N = 200005;
+typedef long long ll;
+ll b[N];
+ll shu_n;
+
+void init(ll n){
+    shu_n = n;
+    memset(b,0,sizeof(b));
+}
+int lowbit(int x) {
+    return x & (-x);
+}
+void update(ll x, ll k) { // x位置 加上 k
+    while(x <= shu_n) {
+        b[x] += k;
+        x += lowbit(x);
+    }
+}
+ll getSum(ll x) {  // 1~x位置 的和
+    ll res = 0;
+    while(x > 0) {
+        res += b[x];
+        x -= lowbit(x);
+    } return res;
+}
+ll sum(ll l,ll r){   //位置[l,r]的和
+    return getSum(r)-getSum(l-1);
+}
+
+// 使用
+init(1000);  // 初始化
+update(1,2);   // 1位置加上2
+cout<<sum(1,3)<<endl;    // 得到 位置1~3的和
+```
+
+# 线段树
+
+```cpp
+const int maxn=1e5+5;
+int sum[maxn*4],add[maxn*4];
+int a[maxn];
+void pushup(int root)  //根节点的和=两个子节点的和
+{
+    sum[root]=(sum[root*2]+sum[root*2+1]);
+}
+void build(int l,int r,int root)//建树，使用数组a作为初始值建树
+{
+    if(l==r)
+  {
+      sum[root] = a[l];
+     return;
+ }
+    int mid=(l+r)/2;
+    build(l,mid,root*2);
+    build(mid+1,r,root*2+1);
+    pushup(root);
+}
+void Add(int num,int val,int l,int r,int root)//修改值，位置num加上val
+{
+    if(l==r&&num==l)
+    {
+        a[num]+=val;
+        sum[root]=a[num];
+        return;
+    }
+    int mid=(l+r)/2;
+    if(num<=mid)
+        Add(num,val,l,mid,root*2);
+    else
+        Add(num,val,mid+1,r,root*2+1);
+    pushup(root);
+}
+int Query(int be,int ed,int l,int r,int root)//查询区间[l,r]的和
+{
+    if(be<=l&&r<=ed)
+        return sum[root];
+    int mid=(l+r)/2;
+    int ans=0;
+    if(be<=mid)
+        ans+=Query(be,ed,l,mid,root*2);
+    if(mid<ed)
+        ans+=Query(be,ed,mid+1,r,root*2+1);
+    return ans;
+}
+
+// 使用
+cin>>n;
+memset(a,0,sizeof(a)); // 全零初始化
+for(int i=1;i<=n;i++){cin>>a[i];}  // 有初始值的初始化
+build(1,n,1);
+Add(1,2,1,n,1);  // 位置1加上2
+Query(2,3,1,n,1); // 查询区间[2,3]的和
+    
+```
+
+
+
+# 字典树
+
+```cpp
+#include <iostream>
+
+using namespace std;
+
+const int N = 1e5+5;
+
+int m;
+char str[N];
+int son[N][26], cnt[N], idx;    // 根节点和空节点的下标均为0,idx类似于单链表
+
+void insert(char str[]) {
+    int p = 0;
+    for (int i = 0; str[i]; ++i) {  // c++字符串结尾\0，可以以此判断是否结尾
+        int u = str[i] - 'a';
+        if (!son[p][u]) son[p][u] = ++idx; // 不存在则创建，前置++,树头结点为0,存储从1开始，保存下一个节点的位置
+        p = son[p][u];      // 走到下一个点，若存在直接走下去，若不存在已经在上面创建了 
+    }
+    
+    cnt[p] ++;
+}
+
+int query(char str[]) {
+    int p = 0;
+    for (int i = 0; str[i]; ++i) {
+        int u = str[i] - 'a';
+        if (!son[p][u]) return 0;
+        p = son[p][u];
+    }
+    
+    return cnt[p];
+}
+
+int main() {
+    cin >> m;
+    while (m --) {
+        char op[2];
+        cin >> op >> str;
+        if (op[0] == 'I') insert(str);
+        else cout << query(str) << endl;
+    }
+    return 0;
+}
+```
+
+# 并查集
+
+```cpp
+int father[100005];
+void init(int n)  //初始化
+{
+    for (int i=0;i<=n;i++) 
+    {
+        father[i]=i;
+    }
+}
+int find(int x) 
+{
+    if(x==father[x]) return x;
+    else return father[x]=find(father[x]);
+}
+bool same(int x, int y)  //是否联通
+{
+    return find(x)==find(y);
+}
+void merge(int x, int y)  // 加边
+{
+    x=find(x);
+    y=find(y);
+    if(x==y) return ;
+    else father[y] = x;
+} 
+```
+
+# 最短路
+
+```cpp
+vector<vector<pair<int,int>>> g(N);
+for(auto& v:times){
+    g[v[0]].push_back({v[2],v[1]});  //add edge
+}
+int ans = -1;
+priority_queue<pair<int,int>> que;
+que.push({0,K});  // init
+vector<int> dis(N,INT_MAX);
+dis[K] = 0;   // start node is K
+while(!que.empty()){
+    auto [d,node] = que.top();
+    que.pop();
+    if(d>dis[node]){  
+        continue;
+    } 
+    for(auto& [d,nodeNext]:g[node]){
+        if(dis[nodeNext] > dis[node] + d){
+            dis[nodeNext] = dis[node] + d;
+            que.push({dis[nodeNext], nodeNext});
+        }
+    }
+}
+```
+
+
+
 # 遍历容器
 
 ```cpp
@@ -27,8 +268,6 @@ perm(4,2)  # 12
 @lru_cache(None)
 def dfs()
 ```
-
-
 
 
 

@@ -1,3 +1,11 @@
+# Linux变量
+
+```shell
+/etc/profile   # 此文件对所有用户生效
+export PATH=PATH:/data/project  # 需添加正确命令
+~/.bashrc   ~/.bash_profile   # 对用户生效，切换到此用户时会执行
+```
+
 # 后台执行
 
 ```shell
@@ -25,12 +33,10 @@ windows 域名映射
 114.67.224.8 master-fedai-test-new.jd.com
 ```
 
-
-
 # 初始化文件
 
 ```shell
-~/.bashrc  #登陆bash的时候默认执行的
+~/.bashrc  #登陆bash的时候默认执行的（对指定用户生效）
 ~/.vimrc   #vim配置文件
 ```
 
@@ -416,7 +422,7 @@ $ kill -9 24234 #强制杀死pid为24234的进程
 $ ps -ef | grep sql  # 查找sql进程
 $ kill -9 xxxx
 $ killall -u app # 杀死app用户的所有进程 (在root权限下)
-$ ps aux | grep P61-T10-I1 |  awk '{print $2}' | xargs kill -9   # kill所有带P61-T10-I1的进程
+$ ps aux | grep session-id |  awk '{print $2}' | xargs kill -9   # kill所有带P61-T10-I1的进程
 ```
 
 # read
