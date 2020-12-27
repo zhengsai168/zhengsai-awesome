@@ -15,10 +15,10 @@ bool topsort(){
     priority_queue<int,vector<int>,greater<int> >Q; // 小编号优先
     // queue<int>Q;   // 不需要小编号优先
     for(int i=1;i<=n;i++){
-        if(du[i]==0)Q.push(i);
+        if(du[i]==0)Q.push(i);  // 先将入度为0的点加入队列
     }
     while(!Q.empty()){
-        int x=Q.top();Q.pop();
+        int x=Q.top();Q.pop();    // 每次取入度为0的点，后继点入度减一，并看其是否减为0（为0（为0则入队），
         L[tot++]=x;
         for(int j=0;j<g[x].size();j++){
             int t=g[x][j];
@@ -30,6 +30,7 @@ bool topsort(){
     return 0;   // 不可以形成
 }
 
+// 使用 
 ```
 
 
@@ -147,6 +148,12 @@ int m;
 char str[N];
 int son[N][26], cnt[N], idx;    // 根节点和空节点的下标均为0,idx类似于单链表
 
+void init(){
+    memset(son,0,sizeof(son));
+    memset(cnt,0,sizeof(cnt));
+    idx = 0;
+}
+
 void insert(char str[]) {
     int p = 0;
     for (int i = 0; str[i]; ++i) {  // c++字符串结尾\0，可以以此判断是否结尾
@@ -169,16 +176,10 @@ int query(char str[]) {
     return cnt[p];
 }
 
-int main() {
-    cin >> m;
-    while (m --) {
-        char op[2];
-        cin >> op >> str;
-        if (op[0] == 'I') insert(str);
-        else cout << query(str) << endl;
-    }
-    return 0;
-}
+// 使用
+init();
+insert(str);  // 插入字符串
+query(str);  // 查询字符串的数量
 ```
 
 # 并查集
@@ -208,6 +209,12 @@ void merge(int x, int y)  // 加边
     if(x==y) return ;
     else father[y] = x;
 } 
+
+// 使用
+cin>>n;
+init(n);
+merge(u,v);  //增加一条(u,v)的边， 即u,v联通了
+same(u,v);  //查询u,v是否联调
 ```
 
 # 最短路
