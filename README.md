@@ -24,11 +24,9 @@
 
 ## [LeetCode题目分类+模板(python)](algorithm-note/LeetCode)
 
-# [周报](work-note)
-
 # [简历](resume)
 
-
+## [每周笔记](weekly-note)
 
 # tmp
 
