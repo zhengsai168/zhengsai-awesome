@@ -26,7 +26,7 @@
 
 # [简历](resume)
 
-## [每周笔记](weekly-note)
+## [每周笔记](weekly_note)
 
 # tmp
 
